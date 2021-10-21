@@ -29,10 +29,6 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    /*ListView listview;
-    RecyclerView recyclerView;
-    LinearLayoutManager manager;*/
-
 
     private RecyclerView mRecyclerView;
     private List<Object> viewItems = new ArrayList<>();
@@ -66,8 +62,6 @@ public class MainActivity extends AppCompatActivity {
         try {
 
             JSONArray array = new JSONArray(LoadJokesFromAssests());
-            //HashMap<String,String> list;
-           // ArrayList<HashMap<String,String>> arrayList=new ArrayList<>();
             for (int i = 0; i < array.length(); i++){
                 JSONObject object = array.getJSONObject(i);
                 String jokeid = object.getString("id");
@@ -83,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        //ONSCROLL LISTENER
+        //ONSCROLL LISTENER- progress bar to mimic data loading
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
@@ -95,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
                     progressBar.setVisibility(View.VISIBLE);
                 }else{
                     ScrollingAtStart = false;
+
+                    //adding delay
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -104,18 +100,12 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             }
-
-            @Override
-            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                //currentItems = layoutManager.getChildCount();
-               // totalItems = layoutManager.getChildCount();
-                //scrollOutItems = layoutManager.findFirstVisibleItemPosition();
-            }
         });
 
     }
 
+
+//fetching the file
     public String LoadJokesFromAssests(){
         String json=null;
 
