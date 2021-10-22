@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -42,22 +43,28 @@ public class MainActivity extends AppCompatActivity {
     int currentItems,totalItems,scrollOutItems;
     ProgressBar progressBar;
 
+    private RecyclerAdapter.RecyclerViewClickListener listener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //getSupportActionBar().hide();
 
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
 
         layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
+        setOnClickListener();
+        mAdapter = new RecyclerAdapter(this,viewItems,listener);
 
-        mAdapter = new RecyclerAdapter(this,viewItems);
         mRecyclerView.setAdapter(mAdapter);
 
         progressBar =findViewById(R.id.progress);
+
+
 
         try {
 
@@ -102,10 +109,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        setOnClickListener();
+
+    }
+
+    private void setOnClickListener() {
+        listener = new RecyclerAdapter.RecyclerViewClickListener() {
+            @Override
+            public void onClick(View v, int position) {
+
+                Intent intent = new Intent(getApplicationContext(), RandomImages.class);
+               /* intent.putExtra("Itemid", viewItems.get(position).getClass());
+                intent.putExtra("id", viewItems.toString());*/
+                startActivity(intent);
+
+
+            }
+        };
     }
 
 
-//fetching the file
+    //fetching the file
     public String LoadJokesFromAssests(){
         String json=null;
 

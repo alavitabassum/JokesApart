@@ -16,13 +16,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private static final int TYPE= 1;
     private final Context context;
     private final List<Object>listRecyclerItem;
+    private RecyclerViewClickListener listener;
 
-    public RecyclerAdapter(Context context, List<Object> listRecyclerItem) {
+    public RecyclerAdapter(Context context, List<Object> listRecyclerItem, RecyclerViewClickListener listener) {
         this.context = context;
         this.listRecyclerItem = listRecyclerItem;
+        this.listener=listener;
     }
 
-    public class ItemViewHolder extends RecyclerView.ViewHolder{
+    public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private TextView jokeid;
         private TextView type;
@@ -35,7 +37,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             type= itemView.findViewById(R.id.joketype);
             description = itemView.findViewById(R.id.jokeinfo);
             punch= itemView.findViewById(R.id.jokepunch);
+            itemView.setOnClickListener(this);
 
+        }
+
+        @Override
+        public void onClick(View itemView) {
+
+            listener.onClick(itemView,getAdapterPosition());
         }
     }
 
@@ -77,5 +86,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public int getItemCount() {
         return listRecyclerItem.size();
+    }
+
+    public interface RecyclerViewClickListener{
+        void onClick(View v, int position);
     }
 }
