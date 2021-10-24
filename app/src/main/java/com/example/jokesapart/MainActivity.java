@@ -122,7 +122,8 @@ public class MainActivity extends AppCompatActivity {
                /* intent.putExtra("Itemid", viewItems.get(position).getClass());
                 intent.putExtra("id", viewItems.toString());*/
                 startActivity(intent);
-
+                finish();
+                finishAffinity();
 
             }
         };

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "68357676345",
+    "project_id": "jokesapart-14d29",
+    "storage_bucket": "jokesapart-14d29.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68357676345:android:081691def8841d4fae5ce8",
+        "android_client_info": {
+          "package_name": "com.example.jokesapart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "68357676345-t9kglvb4prq36s6aif6ntq8rfd9n8ub8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmd01ZY7uM9NPVhB2lIIfhWr-Cyws2Gnk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "68357676345-t9kglvb4prq36s6aif6ntq8rfd9n8ub8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

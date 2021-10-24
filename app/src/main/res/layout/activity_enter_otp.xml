@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EnterOtp"
+    android:background="@color/black">
+
+
+    <ImageView
+        android:id="@+id/otpImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignEnd="@+id/app_title_otp2"
+        android:layout_alignBottom="@+id/app_title_otp2"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="11dp"
+        android:src="@mipmap/wink" />
+
+    <TextView
+        android:id="@+id/app_title_otp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="564dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="J   kes Apart"
+        android:textColor="@color/grey"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/enterOtpText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="392dp"
+        android:gravity="center"
+        android:text="Enter OTP here"
+        android:textColor="@color/grey"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/verify_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="160dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginBottom="168dp"
+        android:text="Verify" />
+
+    <TextView
+        android:id="@+id/printPhnNum"
+        android:layout_width="183dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="347dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/grey" />
+
+    <TextView
+        android:id="@+id/resentOtp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="170dp"
+        android:layout_marginBottom="134dp"
+        android:text="Resend OTP"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:textColorHighlight="@color/grey"/>
+
+    <EditText
+        android:id="@+id/c1"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="340dp"
+        android:layout_marginBottom="252dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textColor="@color/red"/>
+
+    <EditText
+        android:id="@+id/c2"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/c1"
+
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="280dp"
+        android:layout_marginBottom="0dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textColor="@color/red"/>
+
+    <EditText
+        android:id="@+id/c3"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/c1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="216dp"
+        android:layout_marginBottom="0dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textColor="@color/red"/>
+
+    <EditText
+        android:id="@+id/c4"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/c1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="0dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textColor="@color/red"/>
+
+    <EditText
+        android:id="@+id/c5"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/c1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="89dp"
+        android:layout_marginBottom="0dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textColor="@color/red"
+        />
+
+    <EditText
+        android:id="@+id/c6"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/c1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="0dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textColor="@color/red"/>
+
+    <ProgressBar
+        android:id="@+id/progressBarVerify"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="182dp"
+
+        android:layout_marginEnd="181dp"
+        android:layout_marginBottom="98dp"
+
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

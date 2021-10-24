@@ -26,6 +26,6 @@ public class Spalshscreen2 extends AppCompatActivity {
 
             }
 
-        }, 5000); // wait for 3 seconds
+        }, 5000); // wait for 5 seconds
     }
 }

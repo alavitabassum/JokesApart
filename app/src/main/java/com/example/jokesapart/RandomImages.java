@@ -53,5 +53,7 @@ public class RandomImages extends AppCompatActivity {
     public void openJustKidding(){
         Intent intent = new Intent(this, JustKidding.class);
         startActivity(intent);
+       // finish();
+        //finishAffinity();
     }
 }
