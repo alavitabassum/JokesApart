@@ -3,6 +3,7 @@ package com.example.jokesapart;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -23,6 +24,9 @@ public class RandomImages extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_random_images);
+
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black)));
+        getSupportActionBar().setTitle("Select any joke to get a random photo!");
 
         //getSupportActionBar().hide();
 
@@ -55,5 +59,12 @@ public class RandomImages extends AppCompatActivity {
         startActivity(intent);
        // finish();
         //finishAffinity();
+    }
+
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+        finishAffinity();
     }
 }

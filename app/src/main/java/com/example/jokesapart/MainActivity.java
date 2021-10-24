@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -49,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black)));
 
         //getSupportActionBar().hide();
 
@@ -122,8 +125,8 @@ public class MainActivity extends AppCompatActivity {
                /* intent.putExtra("Itemid", viewItems.get(position).getClass());
                 intent.putExtra("id", viewItems.toString());*/
                 startActivity(intent);
-                finish();
-                finishAffinity();
+               // finish();
+                //finishAffinity();
 
             }
         };
@@ -146,5 +149,10 @@ public class MainActivity extends AppCompatActivity {
 
         }
         return json;
+    }
+
+    public void onBackPressed() {
+        finish();
+        finishAffinity();
     }
 }

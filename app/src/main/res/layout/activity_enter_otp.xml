@@ -55,7 +55,8 @@
         android:layout_marginStart="160dp"
         android:layout_marginEnd="157dp"
         android:layout_marginBottom="168dp"
-        android:text="Verify" />
+        android:text="Verify"
+        android:background="@color/red"/>
 
     <TextView
         android:id="@+id/printPhnNum"
