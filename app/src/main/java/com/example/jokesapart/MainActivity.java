@@ -51,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black)));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.grey)));
+        getSupportActionBar().setTitle("Jokes Apart");
+
 
         //getSupportActionBar().hide();
 
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
+
         setOnClickListener();
         mAdapter = new RecyclerAdapter(this,viewItems,listener);
 
@@ -116,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+//on clicking a joke got to new screen
     private void setOnClickListener() {
         listener = new RecyclerAdapter.RecyclerViewClickListener() {
             @Override
@@ -153,6 +157,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void onBackPressed() {
         finish();
-        finishAffinity();
+        finishAffinity();//remove back stack
     }
 }

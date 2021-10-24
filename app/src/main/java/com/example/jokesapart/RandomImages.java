@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -25,7 +26,7 @@ public class RandomImages extends AppCompatActivity {
         super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_random_images);
 
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black)));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.grey)));
         getSupportActionBar().setTitle("Select any joke to get a random photo!");
 
         //getSupportActionBar().hide();
