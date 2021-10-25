@@ -20,7 +20,7 @@ public class Spalshscreen2 extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent i = new Intent(Spalshscreen2.this, MainActivity.class);
+                Intent i = new Intent(Spalshscreen2.this, SelectJokeType.class);
                 startActivity(i);
                 finish();
 

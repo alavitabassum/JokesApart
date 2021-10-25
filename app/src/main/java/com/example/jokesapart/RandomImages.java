@@ -63,7 +63,7 @@ public class RandomImages extends AppCompatActivity {
     }
 
     public void onBackPressed() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, SelectJokeType.class);
         startActivity(intent);
         finish();
         finishAffinity();

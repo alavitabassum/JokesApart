@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JokesApart">
         <activity
+            android:name=".SelectJokeType"
+            android:exported="false" />
+        <activity
             android:name=".EnterOtp"
             android:exported="false" />
         <activity

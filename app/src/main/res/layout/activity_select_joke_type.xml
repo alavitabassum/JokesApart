@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectJokeType"
+    android:background="@color/gray">
+
+    <TextView
+        android:id="@+id/btn_knk"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+
+        android:text="Knock-Knock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingTop="20dp"
+        android:paddingStart="15dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:background="@drawable/rounded_corners"
+        />
+
+    <TextView
+        android:id="@+id/btn_prog"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="60dp"
+        android:text="Programming"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_knk"
+        android:paddingTop="20dp"
+        android:paddingStart="15dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:background="@drawable/rounded_corners2"/>
+
+    <TextView
+        android:id="@+id/btn_general"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="60dp"
+        android:text="General"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_prog"
+        android:paddingTop="20dp"
+        android:paddingStart="40dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:background="@drawable/rounded_corners3"/>
+
+    <TextView
+        android:id="@+id/btn_all_jokes"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="60dp"
+        android:text="All Jokes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_general"
+        android:paddingTop="20dp"
+        android:paddingStart="35dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:background="@drawable/rounded_corners4"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

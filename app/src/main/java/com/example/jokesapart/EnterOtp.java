@@ -93,7 +93,7 @@ public class EnterOtp extends AppCompatActivity {
                                 progressBarVerify.setVisibility(View.VISIBLE);
                                 verifyOTP_btn.setVisibility(View.INVISIBLE);
                                 Toast.makeText(EnterOtp.this,"Welcome!",Toast.LENGTH_SHORT).show();
-                                Intent jokesIntent = new Intent(EnterOtp.this, MainActivity.class);
+                                Intent jokesIntent = new Intent(EnterOtp.this, SelectJokeType.class);
                                 jokesIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(jokesIntent);
                             }else{

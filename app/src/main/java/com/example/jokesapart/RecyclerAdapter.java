@@ -75,10 +75,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 ItemViewHolder itemViewHolder = (ItemViewHolder) viewHolder;
                 Jokes jokes= (Jokes) listRecyclerItem.get(i);
 
-                itemViewHolder.jokeid.setText(jokes.getJokeID());
-                itemViewHolder.type.setText(jokes.getJokeType());
-                itemViewHolder.description.setText(jokes.getJokeDes());
-                itemViewHolder.punch.setText(jokes.getJokePunchline());
+                itemViewHolder.jokeid.setText("Joke ID: " +jokes.getJokeID());
+                //itemViewHolder.type.setText("Joke Type: " + jokes.getJokeType());
+                itemViewHolder.description.setText("Setup: " + jokes.getJokeDes());
+                itemViewHolder.punch.setText("Punchline: " + jokes.getJokePunchline());
 
         }
     }

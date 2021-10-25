@@ -16,10 +16,13 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -46,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerAdapter.RecyclerViewClickListener listener;
 
+    TextView viewSelection;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,23 +74,74 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         progressBar =findViewById(R.id.progress);
+        viewSelection =findViewById(R.id.viewSelection);
 
+        Intent intent_get = getIntent();
+        String str = intent_get.getStringExtra("message");
+        viewSelection.setText(str);
 
+        //viewSelection.setText((getIntent().getStringExtra("selection")));
 
         try {
 
             JSONArray array = new JSONArray(LoadJokesFromAssests());
-            for (int i = 0; i < array.length(); i++){
+            for (int i = 0; i < array.length(); i++) {
                 JSONObject object = array.getJSONObject(i);
                 String jokeid = object.getString("id");
-                String type = object.getString("type");
+              //  String type_all = object.getString("type");
                 String setup = object.getString("setup");
                 String punchline = object.getString("punchline");
+              //  Jokes jokes_all = new Jokes(jokeid, type_all, setup, punchline);
 
-                Jokes jokes = new Jokes(jokeid,type,setup,punchline);
-                viewItems.add(jokes);
 
+                //show only knock knock jokes
+                if(viewSelection.getText().toString().equals("Knock-Knock")){
+                    getSupportActionBar().setTitle("Knock-Knock Jokes");
+
+                    String type_kk = String.valueOf(object.getString("type").equals("knock-knock"));
+                    Jokes jokes_kk = new Jokes(jokeid, type_kk, setup, punchline);
+                    if(object.getString("type").equals("knock-knock")){
+                        viewItems.add(jokes_kk);
+                    }else{
+                        //Toast.makeText(MainActivity.this,"ERROR ERROR!",Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+                //show only programming jokes
+                else if(viewSelection.getText().toString().equals("Programming")){
+
+                    getSupportActionBar().setTitle("Programming Jokes");
+                    String type_prog = String.valueOf(object.getString("type").equals("programming"));
+                    Jokes jokes_p = new Jokes(jokeid, type_prog, setup, punchline);
+                    if(object.getString("type").equals("programming")){
+                        viewItems.add(jokes_p);
+                    }else{
+                        //Toast.makeText(MainActivity.this,"ERROR ERROR!",Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+                //show only general jokes
+                else if(viewSelection.getText().toString().equals("General")){
+
+                    getSupportActionBar().setTitle("Jokes in General");
+                    String type_general = String.valueOf(object.getString("type").equals("general"));
+                    Jokes jokes_g = new Jokes(jokeid, type_general, setup, punchline);
+                    if(object.getString("type").equals("general")){
+                        viewItems.add(jokes_g);
+                    }else{
+                        //Toast.makeText(MainActivity.this,"ERROR ERROR!",Toast.LENGTH_SHORT).show();
+                    }
+
+                }else{
+                    getSupportActionBar().setTitle("Jokes");
+                    //show all jokes
+                    String type_all = object.getString("type");
+                    Jokes jokes_all = new Jokes(jokeid, type_all, setup, punchline);
+                    viewItems.add(jokes_all);
+                    //Toast.makeText(MainActivity.this,"ERROR!",Toast.LENGTH_SHORT).show();
+                }
             }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -156,6 +212,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onBackPressed() {
+
+        Intent intent = new Intent(getApplicationContext(), SelectJokeType.class);
+        startActivity(intent);
         finish();
         finishAffinity();//remove back stack
     }
