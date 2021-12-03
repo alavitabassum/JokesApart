@@ -12,10 +12,13 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 public class RandomImages extends AppCompatActivity {
 
 
     //private WebView webView;
+
+
 
     WebView webView;
     Button button;
@@ -25,6 +28,7 @@ public class RandomImages extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_random_images);
+
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.grey)));
         getSupportActionBar().setTitle("Select any joke to get a random photo!");

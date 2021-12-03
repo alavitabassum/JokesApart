@@ -25,6 +25,6 @@ public class JustKidding extends AppCompatActivity {
 
             }
 
-        }, 5000); // wait for 3 seconds
+        }, 7000); // wait for 7 seconds
     }
 }
